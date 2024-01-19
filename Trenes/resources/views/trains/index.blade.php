@@ -11,11 +11,10 @@
     <h1>Tabla de los trenes</h1>
    
 
-<!--
+
     <p>
-        <a href="{/*{route('platos.create')}}">Crear plato</a>
+        <a href="{{route('tickets.create')}}">Crear Trenes</a>
     </p>
--->
     <p>
         <a href="{{route('tickets.index')}}">Ticket</a>
     </p>
@@ -39,30 +38,31 @@
             <td>  {{ $train->passengers }} </td>
             <td>  {{ $train->year }} </td>
             <td>  {{ $train->train_type->type}} </td>
-           <!-- <td>
-            
+         <td>
                 <form 
-                action="{/*{route('platos.show', ['plato' => $plato->id])}}"
+                action="{{route('trains.show', ['train' => $train->id])}}"
                 method="get">
                     <input type="submit" value="Ver">
                 </form>
             </td>
+              
             <td>
                 <form 
-                action="{/*{route('platos.edit', ['plato' => $plato->id])}}"
+                action="{{route('trains.edit', ['train' => $train->id])}}"
                 method="get">
                     <input type="submit" value="Editar">
                 </form>
             </td>
+       
             <td>
                 <form method="post"
-                action="{/*{route('platos.destroy', ['plato' => $plato->id])}}">
-               
-                {/*{ method_field('DELETE')}}
+                action="{{route('trains.destroy', ['train' => $train->id])}}">
+                @csrf
+                {{ method_field('DELETE')}}
                     <input type="submit" value="Borrar">
                 </form>
             </td>
-        -->
+  
         </tr>
     @endforeach
   
